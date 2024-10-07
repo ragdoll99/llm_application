@@ -185,7 +185,6 @@ sniffio @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_a4
 soupsieve @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/soupsieve_1699283107629/work
 SQLAlchemy==2.0.35
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
-streamlit==1.39.0
 tenacity==8.5.0
 terminado @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/terminado_1699284203253/work
 tiktoken==0.8.0
