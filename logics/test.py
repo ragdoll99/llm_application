@@ -14,7 +14,6 @@ import streamlit as st
 # Import the key CrewAI classes
 from crewai import Agent, Task, Crew
 
-
 # Load the environment variables
 # If the .env file is not found, the function will return `False
 if load_dotenv('.env'):
@@ -38,17 +37,31 @@ print(OPENAI_KEY)
 os.environ['OPENAI_MODEL_NAME'] = "gpt-4o-mini"
 
 # read csv
+files = [file for file in os.listdir("./data") if file.endswith("csv")]
+
 path ='./data'
 extension = '.csv'
 
-files = [file for file in os.listdire(path) if file.endswith(extension)]
 dfs_raw = []
 for file in files:
    df_raw = pd.read_csv(os.path.join(path, file), low_memory=False)
-   dfs_raw.append()
+   dfs_raw.append(df_raw)
 
 # combine raw table
 df = pd.concat(dfs_raw, ignore_index=True)
+# ########
+# path ='./data'
+# extension = '.csv'
+
+# files = [file for file in os.listdir(path) if file.endswith('extension')]
+# print(files)
+# dfs_raw = []
+# for file in files:
+#    df_raw = pd.read_csv(os.path.join(path, file), low_memory=False)
+#    dfs_raw.append(df_raw)
+
+# # combine raw table
+# df = pd.concat(dfs_raw, ignore_index=True)
 
 # csvpath = './data/hdb_resale_full_with_mall_hawker.csv'
 # df = pd.read_csv(csvpath)
