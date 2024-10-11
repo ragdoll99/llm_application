@@ -10,14 +10,26 @@ import numpy as np
 
 #Loading the data
 @st.cache_data
-def get_data_hdb_resale():
-     return pd.read_csv("./data/hdb_resale_full_with_mall_hawker.csv")
+#  read csv
+path ='./data'
+extension = '.csv'
+
+files = [file for file in os.listdire(path) if file.endswith(extension)]
+dfs_raw = []
+for file in files:
+   df_raw = pd.read_csv(os.path.join(path, file), low_memory=False)
+   dfs_raw.append()
+
+# combine raw table
+df_hdb_resale = pd.concat(dfs_raw, ignore_index=True)
+
+# def get_data_hdb_resale():
+#      return pd.read_csv("./data/hdb_resale_full_with_mall_hawker.csv")
 
 #configuration of the page
 st.set_page_config(layout="wide")
 #load dataframes
-df_hdb_resale = get_data_hdb_resale()
-# df_hdb_resale['year'] = df_hdb_resale['year'].astype(int)
+# df_hdb_resale = get_data_hdb_resale()
 
 st.title('HDB Resale transaction explorer')
 st.markdown("""
