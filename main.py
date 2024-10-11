@@ -4,6 +4,12 @@ from logics.customer_query_handler import process_user_message
 from logics.test import generate_answer
 from utility import check_password
 
+# newly added
+import sqlite3
+import pysqlite3
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # region <--------- Streamlit App Configuration --------->
 st.set_page_config(
     layout="wide",
